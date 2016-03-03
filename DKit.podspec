@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                  = "DKit"        #名称
-  s.version               = "0.0.1"       #版本号
+  s.version               = "0.0.2"       #版本号
   s.summary               = "DKit"            #简短介绍，下面是详细介绍
   s.description           = <<-DESC
                             Testing Private Podspec.
@@ -14,6 +14,7 @@ Pod::Spec.new do |s|
   s.platform              = :ios, "7.0"
   s.source                = { :git => "https://github.com/smartdj/DKit.git", :tag => s.version }    #项目地址，这里不支持ssh的地址，验证不通过，只支持HTTP和HTTPS，最好使用HTTPS
   s.source_files          = 'DKit', 'DKit/**/*.{h,m,swift}'
+  s.source_files          = 'DKit', 'DKit/**/**/*.{h,m,swift}'
   s.requires_arc          = true    #是否使用ARC，如果指定具体文件，则具体的问题使用ARC
   s.frameworks            = 'UIKit'                  #所需的framework，多个用逗号隔开
   s.dependency 'AFNetworking', '~> 3.0.4'   #依赖关系，该项目所依赖的其他库
@@ -27,4 +28,5 @@ Pod::Spec.new do |s|
   s.dependency 'ZipArchive', '~> 1.4.0'
   s.dependency 'LGHelper', '~> 1.1.0'
   s.dependency 'LGViews', '~> 1.0.0'
+  s.dependency 'JRSwizzle', '~> 1.0'
 end
