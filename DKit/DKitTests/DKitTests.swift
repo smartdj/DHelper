@@ -1,15 +1,15 @@
 //
-//  DHelperTests.swift
-//  DHelperTests
+//  DKitTests.swift
+//  DKitTests
 //
 //  Created by dj on 16/3/3.
 //  Copyright © 2016年 dj. All rights reserved.
 //
 
 import XCTest
-@testable import DHelper
+@testable import DKit
 
-class DHelperTests: XCTestCase {
+class DKitTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
