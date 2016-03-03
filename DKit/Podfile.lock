@@ -1,0 +1,56 @@
+PODS:
+  - AFNetworking (3.0.4):
+    - AFNetworking/NSURLSession (= 3.0.4)
+    - AFNetworking/Reachability (= 3.0.4)
+    - AFNetworking/Security (= 3.0.4)
+    - AFNetworking/Serialization (= 3.0.4)
+    - AFNetworking/UIKit (= 3.0.4)
+  - AFNetworking/NSURLSession (3.0.4):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.0.4)
+  - AFNetworking/Security (3.0.4)
+  - AFNetworking/Serialization (3.0.4)
+  - AFNetworking/UIKit (3.0.4):
+    - AFNetworking/NSURLSession
+  - hpple (0.2.0)
+  - KissXML (5.0.3):
+    - KissXML/Standard (= 5.0.3)
+  - KissXML/Core (5.0.3)
+  - KissXML/Standard (5.0.3):
+    - KissXML/Core
+  - Mantle (2.0.6):
+    - Mantle/extobjc (= 2.0.6)
+  - Mantle/extobjc (2.0.6)
+  - Masonry (0.6.4)
+  - RealReachability (1.1.1)
+  - RegexKitLite (4.0)
+  - SDWebImage (3.7.5):
+    - SDWebImage/Core (= 3.7.5)
+  - SDWebImage/Core (3.7.5)
+  - ZipArchive (1.4.0)
+
+DEPENDENCIES:
+  - AFNetworking
+  - hpple
+  - KissXML
+  - Mantle
+  - Masonry
+  - RealReachability
+  - RegexKitLite
+  - SDWebImage
+  - ZipArchive
+
+SPEC CHECKSUMS:
+  AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
+  hpple: 3b765f96fc2cd56ad1a49aef6f7be5cb2aa64b57
+  KissXML: d19dd6dc65e0dc721ba92b3077b8ebdd240f1c1e
+  Mantle: 299966b00759634931699f69cb6a30b9239b944d
+  Masonry: 281802d04d787ea2973179ee8bcb50500579ede2
+  RealReachability: 0b0f7d686a75466680d452d3fad00e1a1388b923
+  RegexKitLite: c0e4c12e6e7de0769f3a3ed679f0f61604170661
+  SDWebImage: 69c6303e3348fba97e03f65d65d4fbc26740f461
+  ZipArchive: e25a4373192673e3229ac8d6e9f64a3e5713c966
+
+COCOAPODS: 0.39.0

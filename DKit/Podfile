@@ -1,0 +1,12 @@
+source 'https://gitcafe.com/akuandev/Specs.git'
+platform :ios, '7.0'
+pod "AFNetworking"
+pod "KissXML"
+pod "SDWebImage"
+pod "Masonry"
+#pod "TFHpple"
+pod "ZipArchive"
+pod "RegexKitLite"
+pod "Mantle"
+pod "hpple"
+pod "RealReachability"
