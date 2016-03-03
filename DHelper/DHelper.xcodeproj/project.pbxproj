@@ -376,6 +376,7 @@
 				22CE60291C87F3B0001DBC1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		22CE602A1C87F3B0001DBC1C /* Build configuration list for PBXNativeTarget "DHelperTests" */ = {
 			isa = XCConfigurationList;
@@ -384,6 +385,7 @@
 				22CE602C1C87F3B0001DBC1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
