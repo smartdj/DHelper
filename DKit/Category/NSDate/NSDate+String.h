@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface NSDate (String)
--(NSString*)toStringWithFormat:(NSString*)format;
--(NSString *)timeStamp;
+- (NSString*)toStringWithFormat:(NSString*)format;
++ (NSString *)timeStamp;
+- (NSString *)day;
+- (NSString*)weekdayString;
+- (NSInteger)weekdayIndex;
 @end
