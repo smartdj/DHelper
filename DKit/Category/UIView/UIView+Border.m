@@ -81,6 +81,61 @@
     }
 }
 
+- (void)setBorder:(BorderDirect)borderDirect withColor:(UIColor *)color withWidth:(CGFloat)width withEdgeInsets:(UIEdgeInsets)edgeInsets
+{
+    if (borderDirect == topBorder) {
+        UIView* view = [[UIView alloc]init];
+        view.tag = topBorder;
+        view.backgroundColor = color;
+        [self addSubview:view];
+        
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(@(edgeInsets.left));
+            make.top.equalTo(@0);
+            make.right.equalTo(self).offset(edgeInsets.right);
+            make.height.equalTo([NSNumber numberWithFloat:width]);
+        }];
+        
+    }
+    if (borderDirect == leftBorder) {
+        UIView* view = [[UIView alloc]init];
+        view.backgroundColor = color;
+        [self addSubview:view];
+        view.tag = leftBorder;
+        
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(@0);
+            make.top.equalTo(@(edgeInsets.top));
+            make.width.equalTo([NSNumber numberWithFloat:width]);
+            make.bottom.equalTo(self).offset(edgeInsets.bottom);
+        }];
+    }
+    if (borderDirect == bottomBorder) {
+        UIView* view = [[UIView alloc]init];
+        view.backgroundColor = color;
+        [self addSubview:view];
+        view.tag = bottomBorder;
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(@(edgeInsets.left));
+            make.top.equalTo([NSNumber numberWithFloat:self.height - width*2]);
+            make.right.equalTo(self.mas_right).offset(edgeInsets.right);
+            make.height.equalTo([NSNumber numberWithFloat:width]);
+        }];
+    }
+    if (borderDirect == rightBorder) {
+        UIView* view = [[UIView alloc]init];
+        view.backgroundColor = color;
+        [self addSubview:view];
+        view.tag = rightBorder;
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo([NSNumber numberWithFloat:self.width - width]);
+            make.top.equalTo(@(edgeInsets.top));
+            make.width.equalTo([NSNumber numberWithFloat:width]);
+            make.bottom.equalTo(self).offset(edgeInsets.bottom);
+        }];
+    }
+}
+
 -(void)removeBorder:(BorderDirect)borderDirect
 {
     for (UIView *subView in self.subviews)

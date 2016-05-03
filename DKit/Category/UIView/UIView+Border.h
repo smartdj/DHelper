@@ -19,4 +19,7 @@ typedef NS_ENUM(NSUInteger, BorderDirect)
 @interface UIView(Border)
 - (void)setBorder:(BorderDirect)borderDirect withColor:(UIColor *)color andWidth:(CGFloat)width;
 - (void)removeBorder:(BorderDirect)borderDirect;
+
+- (void)setBorder:(BorderDirect)borderDirect withColor:(UIColor *)color withWidth:(CGFloat)width withEdgeInsets:(UIEdgeInsets)edgeInsets;
+
 @end
