@@ -17,11 +17,11 @@ Pod::Spec.new do |s|
   s.source_files          = 'DKit', 'DKit/**/**/*.{h,m,swift}'
   s.requires_arc          = true    #是否使用ARC，如果指定具体文件，则具体的问题使用ARC
   s.frameworks            = 'UIKit'                  #所需的framework，多个用逗号隔开
-  s.dependency 'AFNetworking', '~> 3.0.4'   #依赖关系，该项目所依赖的其他库
+  s.dependency 'AFNetworking'   #依赖关系，该项目所依赖的其他库
   s.dependency 'hpple', '~> 0.2.0'
   s.dependency 'KissXML', '~> 5.0.3'
-  s.dependency 'Mantle', '~> 2.0.6'
-  s.dependency 'Masonry', '~> 0.6.4'
+  s.dependency 'Mantle'
+  s.dependency 'Masonry'
   s.dependency 'RealReachability', '~> 1.1.1'
   s.dependency 'RegexKitLite', '~> 4.0'
   s.dependency 'SDWebImage', '~> 3.7.5'
