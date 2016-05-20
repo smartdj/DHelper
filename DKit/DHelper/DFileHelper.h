@@ -26,7 +26,7 @@
 +(BOOL)isFileExistInPath:(NSString*)path;
 +(BOOL)renameFile:(NSString*)oldFilePath to:(NSString*)newFilePath;
 
-
++(NSString*) fullFilePathFromBundle:(NSString*) bundleFullName withFileName:(NSString*)fileName;
 
 //枚举目录，返回的ARRAY中存放的是路径，使用NSDictionary,value为1表示当前路径为目录，value为0表示当前路径为文件。
 +(NSArray *)enumerateFileInPath:(NSString *)path;
