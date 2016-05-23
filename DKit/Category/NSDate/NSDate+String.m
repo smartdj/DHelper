@@ -20,10 +20,11 @@
     return currentDateString;
 }
 
+//兼容android，使用13位
 + (NSString *)timeStamp
 {
     NSDate *datenow = [NSDate date];//现在时间
-    NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)[datenow timeIntervalSince1970]];//微秒级
+    NSString *timeSp = [NSString stringWithFormat:@"%ld", (long)([datenow timeIntervalSince1970]*1000)];//毫秒级
     return timeSp;
 }
 
