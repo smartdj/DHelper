@@ -18,14 +18,8 @@
         CGSize size = CGSizeMake(image1.size.width + imageSpcing + image2.size.width, image1.size.height>=image2.size.height?image1.size.height:image2.size.height);
         
         //支持retina高分的关键
-        if(&UIGraphicsBeginImageContextWithOptions != NULL)
-        {
-            UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
-        }
-        else
-        {
-            UIGraphicsBeginImageContext(size);
-        }
+        UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
+        
         [image1 drawInRect:CGRectMake(0, 0, image1.size.width, size.height)];
         [image2 drawInRect:CGRectMake(image1.size.width + imageSpcing, 0, image2.size.width, size.height)];
         UIImage *togetherImage = UIGraphicsGetImageFromCurrentImageContext();

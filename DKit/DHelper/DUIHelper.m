@@ -34,10 +34,10 @@
                                          context:nil];
         textSize = CGSizeMake(ceil(rect.size.width), ceil(rect.size.height));
     }
-    else
-    {
-        textSize = [text sizeWithFont:font constrainedToSize:maxSize lineBreakMode:NSLineBreakByCharWrapping];
-    }
+//    else
+//    {
+//        textSize = [text sizeWithFont:font constrainedToSize:maxSize lineBreakMode:NSLineBreakByCharWrapping];
+//    }
     
     return textSize;
 }

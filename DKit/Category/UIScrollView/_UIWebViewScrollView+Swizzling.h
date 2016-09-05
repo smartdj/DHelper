@@ -11,6 +11,6 @@
 
 @interface UIScrollView(_UIWebViewScrollView_Swizzling)
 @property BOOL enableChangeFrame;
--(void)hookSetFrame;
+//-(void) hookSetFrame;
 -(void) setFrameSwizzling:(CGRect) frame;
 @end

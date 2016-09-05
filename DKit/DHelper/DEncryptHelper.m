@@ -96,10 +96,10 @@ int main( int argc, char *argv[] )
 {
     const char *cStr = [str UTF8String];
     unsigned char result[32];
-    CC_MD5( cStr, strlen(cStr), result );
+    CC_MD5( cStr, (CC_LONG)strlen(cStr), result );
 
     return [NSString stringWithFormat:
-            @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
+            @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
             result[0],result[1],result[2],result[3],
             result[4],result[5],result[6],result[7],
             result[8],result[9],result[10],result[11],
@@ -110,12 +110,28 @@ int main( int argc, char *argv[] )
             result[28], result[29],result[30], result[31]];
 }
 
-#pragma mark md5 16位加密 （小写）
-+(NSString *)md5_16:(NSString *)str
++ (NSString *)md5_32_DataHash:(NSData *)data
 {
-    const char *cStr = [str UTF8String];
+    // Create byte array of unsigned chars
+    unsigned char md5Buffer[CC_MD5_DIGEST_LENGTH];
+    
+    // Create 16 byte MD5 hash value, store in buffer
+    CC_MD5(data.bytes, (CC_LONG)data.length, md5Buffer);
+    
+    // Convert unsigned char buffer to NSString of hex values
+    NSMutableString *output = [NSMutableString stringWithCapacity:CC_MD5_DIGEST_LENGTH * 2];
+    for(int i = 0; i < CC_MD5_DIGEST_LENGTH; i++)
+        [output appendFormat:@"%02x",md5Buffer[i]];
+    
+    return output;
+}
+
+#pragma mark md5 16位加密 （小写）
++(NSString *)md5_16_DataHash:(NSData *)data
+{
+    const char *cStr = (const char *)[data bytes];
     unsigned char result[16];
-    CC_MD5(cStr, strlen(cStr), result); // This is the md5 call
+    CC_MD5(cStr, (CC_LONG)strlen(cStr), result); // This is the md5 call
     return [NSString stringWithFormat:
             @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
             result[0], result[1], result[2], result[3],
@@ -124,6 +140,21 @@ int main( int argc, char *argv[] )
             result[12], result[13], result[14], result[15]
             ];
 }
+
++(NSString *)md5_16:(NSString *)str
+{
+    const char *cStr = [str UTF8String];
+    unsigned char result[16];
+    CC_MD5(cStr, (CC_LONG)strlen(cStr), result); // This is the md5 call
+    return [NSString stringWithFormat:
+            @"%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x%02x",
+            result[0], result[1], result[2], result[3],
+            result[4], result[5], result[6], result[7],
+            result[8], result[9], result[10], result[11],
+            result[12], result[13], result[14], result[15]
+            ];
+}
+
 
 
 #pragma mark md5 16位加密 （大写）
@@ -151,9 +182,8 @@ int main( int argc, char *argv[] )
     NSUInteger dataLength = [clearText length];
     
     //如果待加密的明文中含有汉字的话，dataLength长度要增加（因为能用ASCII码表示的字符占一个字节，而汉字占3个字节）
-    int length = [clearText length];
     int hangCount = 0;//计数clearText中汉字的数量
-    for (int i=0; i<length; ++i)
+    for (int i=0; i<dataLength; ++i)
     {
         NSRange range = NSMakeRange(i, 1);
         NSString *subString = [clearText substringWithRange:range];

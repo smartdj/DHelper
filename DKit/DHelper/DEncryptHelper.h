@@ -13,6 +13,8 @@
 //md5
 + (NSString *)md5_16:(NSString *)str;
 + (NSString *)md5_32:(NSString *)str;
++ (NSString *)md5_16_DataHash:(NSData *)data;
++ (NSString *)md5_32_DataHash:(NSData *)data;
 //DES
 + (NSData *) encryptUseDES:(NSString *)clearText key:(NSString *)key;
 + (NSString *) decryptUseDES:(NSData *)plainData key:(NSString *)key;

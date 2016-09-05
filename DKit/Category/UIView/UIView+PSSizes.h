@@ -6,6 +6,8 @@
 //  Copyright 2011 Peter Steinberger. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface UIView (PSSizes)
 

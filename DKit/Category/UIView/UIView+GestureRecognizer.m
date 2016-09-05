@@ -9,11 +9,17 @@
 #import "UIView+GestureRecognizer.h"
 
 @implementation UIView (GestureRecognizer)
--(void)addSingleTapGestureRecognizerWith:(SEL)selector  withTarget:(id)target
+-(void)addSingleTapGestureRecognizerWithTarget:(id)target withAction:(SEL)selector
 {
     UITapGestureRecognizer* singleRecognizer;
     singleRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:target action:selector];
     singleRecognizer.numberOfTapsRequired = 1; // 单击
     [self addGestureRecognizer:singleRecognizer];
+}
+
+-(void)addLongPressGestureRecognizerWithTarget:(id)target withAction:(SEL)selector
+{
+    UILongPressGestureRecognizer *longPressRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:target action:selector];
+    [self addGestureRecognizer:longPressRecognizer];
 }
 @end

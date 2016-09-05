@@ -32,14 +32,7 @@
     
     while (contentHeight > 0)
     {
-        if(&UIGraphicsBeginImageContextWithOptions != NULL)
-        {
-            UIGraphicsBeginImageContextWithOptions(boundsSize, NO, 0.0);
-        }
-        else
-        {
-            UIGraphicsBeginImageContext(boundsSize);
-        }
+        UIGraphicsBeginImageContextWithOptions(boundsSize, NO, 0.0);
         
         [self.layer renderInContext:UIGraphicsGetCurrentContext()];
         UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
@@ -52,14 +45,7 @@
     }
     [self.scrollView setContentOffset:offset];
     
-    if(&UIGraphicsBeginImageContextWithOptions != NULL)
-    {
-        UIGraphicsBeginImageContextWithOptions(self.scrollView.contentSize, NO, 0.0);
-    }
-    else
-    {
-        UIGraphicsBeginImageContext(self.scrollView.contentSize);
-    }
+    UIGraphicsBeginImageContext(self.scrollView.contentSize);
     
     [images enumerateObjectsUsingBlock:^(UIImage *image, NSUInteger idx, BOOL *stop) {
         [image drawInRect:CGRectMake(0, boundsHeight * idx, boundsWidth, boundsHeight)];

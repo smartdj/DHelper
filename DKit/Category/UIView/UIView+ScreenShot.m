@@ -77,14 +77,7 @@
     }
     
     //支持retina高分的关键
-    if(&UIGraphicsBeginImageContextWithOptions != NULL)
-    {
-        UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
-    }
-    else
-    {
-        UIGraphicsBeginImageContext(size);
-    }
+    UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
     
     //如果被截图的窗口处于不可见状态则无法绘制，所以要先把他显示出来
     BOOL isHidden = self.hidden;

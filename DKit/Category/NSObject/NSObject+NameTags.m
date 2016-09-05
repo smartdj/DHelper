@@ -11,7 +11,7 @@
 @implementation NSObject(NameTags)
 -(id)nameTag
 {
-    return objc_getAssociatedObject(self, @selector(nametag));
+    return objc_getAssociatedObject(self, @selector(nameTag));
 }
 
 -(void)setNameTag:(NSString*)theNameTag

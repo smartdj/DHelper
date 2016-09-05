@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface UIView (GestureRecognizer)
-//-(void)singleTapGestureHandler:(UITapGestureRecognizer*)recognizer
--(void)addSingleTapGestureRecognizerWith:(SEL)selector withTarget:(id)target;
+-(void)addSingleTapGestureRecognizerWithTarget:(id)target withAction:(SEL)selector;
+
+-(void)addLongPressGestureRecognizerWithTarget:(id)target withAction:(SEL)selector;
 @end
