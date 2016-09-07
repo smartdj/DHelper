@@ -13,6 +13,8 @@
 #pragma mark 给视图某一个方向添加边框线
 - (void)setBorder:(BorderDirect)borderDirect withColor:(UIColor *)color andWidth:(CGFloat)width
 {
+    __weak typeof(self) wSelf = self;
+    
     if (borderDirect == topBorder) {
 //        CALayer *layer = [CALayer layer];
 //        layer.frame = CGRectMake(0, 0, self.frame.size.width, width);
@@ -26,8 +28,8 @@
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(@0);
             make.top.equalTo(@0);
-            make.width.equalTo(self);
-            make.height.equalTo([NSNumber numberWithFloat:width]);
+            make.width.equalTo(wSelf);
+            make.height.equalTo(@(width));
         }];
         
     }
@@ -56,11 +58,12 @@
         view.backgroundColor = color;
         [self addSubview:view];
         view.tag = bottomBorder;
+        
         [view mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(@0);
-            make.top.equalTo([NSNumber numberWithFloat:self.height - width]);
-            make.width.equalTo(self);
-            make.height.equalTo([NSNumber numberWithFloat:width]);
+            make.top.equalTo(wSelf.mas_bottom).offset(-width);
+            make.width.equalTo(wSelf);
+            make.height.equalTo(@(width));
         }];
     }
     if (borderDirect == rightBorder) {
