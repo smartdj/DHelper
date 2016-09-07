@@ -33,6 +33,10 @@ static char overlayKey;
     self.overlay.backgroundColor = backgroundColor;
 }
 
+- (void)lt_hideShadow{
+    self.shadowImage =  [[UIImage alloc] init];
+}
+
 - (void)lt_setTranslationY:(CGFloat)translationY
 {
     self.transform = CGAffineTransformMakeTranslation(0, translationY);
