@@ -10,10 +10,9 @@
 
 @implementation UIImage (Scale)
 -(UIImage*) scaleToSize:(CGSize)size
-{
-    // 创建一个bitmap的context
+{    // 创建一个bitmap的context
     // 并把它设置成为当前正在使用的context
-    UIGraphicsBeginImageContext(size);
+    UIGraphicsBeginImageContextWithOptions(size, NO, 0.0);
     
     // 绘制改变大小的图片
     [self drawInRect:CGRectMake(0, 0, size.width, size.height)];
