@@ -70,6 +70,25 @@
     return res;
 }
 
+//在Cache中创建文件夹
++(BOOL)createDirectoryInCache:(NSString*)relativePath
+{
+    NSString *cachePath =[self cacheDirectory];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *testDirectory = [cachePath stringByAppendingPathComponent:relativePath];
+    
+    if([self isDirectoryExist:testDirectory])
+        return YES;
+    
+    // 创建目录
+    BOOL res=[fileManager createDirectoryAtPath:testDirectory withIntermediateDirectories:YES attributes:nil error:nil];
+    if (res) {
+        NSLog(@"文件夹创建成功");
+    }else
+        NSLog(@"文件夹创建失败");
+    return res;
+}
+
 //文件夹是否存在
 +(BOOL)isDirectoryExist:(NSString*)path
 {

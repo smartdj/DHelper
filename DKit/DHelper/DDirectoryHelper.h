@@ -28,12 +28,18 @@
 +(NSString*)tempFolder;
 //获取Library目录
 +(NSString*)libraryDirectory;
+
 //创建文件夹
 +(BOOL)createDirectoryInDocucments:(NSString*)relativePath;
+//在Cache中创建文件夹
++(BOOL)createDirectoryInCache:(NSString*)relativePath;
+
 // 获取当前程序包中一个图片资源（apple.png）路径
 +(NSString*)pathForResource:(NSString*)resourceName ofType:(NSString*)type;
 
 +(BOOL)isDirectoryExist:(NSString*)path;
 //删除文件夹
 +(BOOL)deleteDirectory:(NSString *)path;
+
+
 @end
