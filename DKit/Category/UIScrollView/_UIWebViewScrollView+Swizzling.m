@@ -8,7 +8,7 @@
 //这个分类是为了hook UIWebView中的_UIWebViewScrollView而设计
 #import "_UIWebViewScrollView+Swizzling.h"
 
-#import "JRSwizzle.h"
+#import <JRSwizzle/JRSwizzle.h>
 #import <objc/runtime.h>
 
 
