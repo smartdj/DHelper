@@ -14,4 +14,7 @@
 - (void)lt_setElementsAlpha:(CGFloat)alpha;
 - (void)lt_setTranslationY:(CGFloat)translationY;
 - (void)lt_reset;
+
+- (void)setBackgroundColor:(UIColor *)color;
+- (void)hideBackground;
 @end

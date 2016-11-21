@@ -8,6 +8,7 @@
 
 #import "UINavigationBar+Awesome.h"
 #import <objc/runtime.h>
+#import "UIImage+Color.h"
 @implementation UINavigationBar (Awesome)
 static char overlayKey;
 
@@ -68,5 +69,22 @@ static char overlayKey;
     [self setBackgroundImage:nil forBarMetrics:UIBarMetricsDefault];
     [self.overlay removeFromSuperview];
     self.overlay = nil;
+}
+
+- (void)hideBackground
+{
+    [self setBackgroundImage:[[UIImage alloc] init]
+              forBarPosition:UIBarPositionAny
+                  barMetrics:UIBarMetricsDefault];
+    
+    [self setShadowImage:[[UIImage alloc] init]];
+}
+
+- (void)setBackgroundColor:(UIColor *)color
+{
+    [self setBackgroundImage:[UIImage imageWithColor:color]
+              forBarPosition:UIBarPositionAny
+                  barMetrics:UIBarMetricsDefault];
+    self.shadowImage = nil;
 }
 @end
