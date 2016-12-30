@@ -7,7 +7,7 @@
 //
 
 #import "DDownloadHelper.h"
-#import <AFNetworking/AFNetworking.h>
+#import "AFNetworking.h"
 #import "LGHelper.h"
 @implementation DDownloadHelper
 
