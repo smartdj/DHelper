@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface DUtilsHelper : NSObject
-
++ (void)makePhoneCall:(NSString *)phoneNumber wihtoutPrompt:(BOOL)withoutPrompt;
 @end
