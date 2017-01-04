@@ -18,6 +18,7 @@
 #import "DDownloadHelper.h"
 #import "DOCRuntimeHelper.h"
 #import "DAppStoreHelper.h"
+#import "DUtilsHelper.h"
 @interface DHelper : NSObject
 
 @end
