@@ -19,6 +19,5 @@
 #import "DOCRuntimeHelper.h"
 #import "DAppStoreHelper.h"
 #import "DUtilsHelper.h"
-@interface DHelper : NSObject
+#import "DEncryptHelper.h"
 
-@end
