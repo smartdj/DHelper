@@ -20,4 +20,6 @@
 #import "DAppStoreHelper.h"
 #import "DUtilsHelper.h"
 #import "DEncryptHelper.h"
+#import "UIBarButtonItem+Category.h"
+#import "UIColor+Category.h"
 
