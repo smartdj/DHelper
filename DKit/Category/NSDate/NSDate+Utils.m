@@ -234,6 +234,46 @@
     return str;
 }
 
+- (NSString *)stringTimeAgo{
+    // 获取当前时时间戳 1466386762.345715 十位整数 6位小数
+    NSTimeInterval currentTime = [[NSDate date] timeIntervalSince1970];
+    currentTime = floor(currentTime);
+    
+    NSTimeInterval timeInterval = [self timeIntervalSince1970];
+    // 时间差
+    NSTimeInterval time = currentTime - timeInterval;
+    
+    // 少于一分钟
+    if (time<60) {
+        return @"刚刚";
+    }
+    
+    // 秒转分钟
+    NSInteger minuies = time/60;
+    if (minuies<60) {
+        return [NSString stringWithFormat:@"%ld分钟前",(long)minuies];
+    }
+    
+    // 秒转小时
+    NSInteger hours = time/3600;
+    if (hours<24) {
+        return [NSString stringWithFormat:@"%ld小时前",(long)hours];
+    }
+    //秒转天数
+    NSInteger days = time/3600/24;
+    if (days < 30) {
+        return [NSString stringWithFormat:@"%ld天前",(long)days];
+    }
+    //秒转月
+    NSInteger months = time/3600/24/30;
+    if (months < 12) {
+        return [NSString stringWithFormat:@"%ld月前",(long)months];
+    }
+    //秒转年
+    NSInteger years = time/3600/24/30/12;
+    return [NSString stringWithFormat:@"%ld年前",(long)years];
+}
+
 + (NSString *)stringLoacalDate
 {
     NSDateFormatter *format = [[NSDateFormatter alloc] init];

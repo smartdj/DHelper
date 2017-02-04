@@ -10,6 +10,6 @@
 #import <MJRefresh/MJRefresh.h>
 
 @interface UITableView (MJRefresh)
-- (void)addPullDownHeaderWithRefreshingTarget:(id)target refreshingAction:(SEL)action;
-- (void)addPullUpFooterWithRefreshingTarget:(id)target refreshingAction:(SEL)action;
+- (void)addPullDownHeaderWithTarget:(id)target action:(SEL)action;
+- (void)addPullUpFooterWithTarget:(id)target action:(SEL)action;
 @end

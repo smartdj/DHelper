@@ -41,6 +41,7 @@
 - (NSString *)timeHourMinuteWithPrefix:(BOOL)enablePrefix suffix:(BOOL)enableSuffix;
 
 #pragma mark - Date String
+- (NSString *)stringTimeAgo;
 - (NSString *)stringTime;
 - (NSString *)stringMonthDay;
 - (NSString *)stringYearMonthDay;

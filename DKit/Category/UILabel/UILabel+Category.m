@@ -21,6 +21,10 @@
  */
 - (CGSize)stringRect:(NSAttributedString *)string maxSize:(CGSize)maxSize
 {
+    if([string.string isEqualToString:@""]){
+        return CGSizeZero;
+    }
+    
     CGSize size = CGSizeZero;
     NSMutableAttributedString *atrString = [[NSMutableAttributedString alloc] initWithAttributedString:string];
     NSRange range = NSMakeRange(0, atrString.length);
@@ -54,8 +58,10 @@
     [attDic setObject:font forKey:NSFontAttributeName];
     [attDic setObject:paragraphStyle forKey:NSParagraphStyleAttributeName];
     
+    NSStringDrawingOptions options =  NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading;
+    
     CGSize strSize = [[string string] boundingRectWithSize:maxSize
-                                                   options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading
+                                                   options:options
                                                 attributes:attDic
                                                    context:nil].size;
     

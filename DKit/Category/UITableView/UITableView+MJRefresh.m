@@ -10,7 +10,7 @@
 
 
 @implementation UITableView (MJRefresh)
-- (void)addPullDownHeaderWithRefreshingTarget:(id)target refreshingAction:(SEL)action
+- (void)addPullDownHeaderWithTarget:(id)target action:(SEL)action
 {
     //中文
     MJRefreshNormalHeader *header = [MJRefreshNormalHeader headerWithRefreshingTarget:target refreshingAction:action];
@@ -23,7 +23,7 @@
 }
 
 //上拉加载更多
-- (void)addPullUpFooterWithRefreshingTarget:(id)target refreshingAction:(SEL)action
+- (void)addPullUpFooterWithTarget:(id)target action:(SEL)action
 {
     MJRefreshAutoNormalFooter *footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:target refreshingAction:action];
     self.mj_footer = footer;
