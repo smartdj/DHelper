@@ -11,6 +11,7 @@
 @implementation UIView (GestureRecognizer)
 -(void)addSingleTapGestureRecognizerWithTarget:(id)target withAction:(SEL)selector
 {
+    self.userInteractionEnabled = YES;
     UITapGestureRecognizer* singleRecognizer;
     singleRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:target action:selector];
     singleRecognizer.numberOfTapsRequired = 1; // 单击

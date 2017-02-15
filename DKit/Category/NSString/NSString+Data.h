@@ -10,4 +10,5 @@
 
 @interface NSString (Data)
 -(NSData*) dataFromString;
+- (NSData *)dataFromHexString;
 @end

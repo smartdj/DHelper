@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface NSData (NSString)
--(NSString*) stringFromData;
--(NSString*) stringFromGB2312Data;
+- (NSString*)stringFromData;
+- (NSString*)stringFromGB2312Data;
+- (NSString *)hexString;
 @end
