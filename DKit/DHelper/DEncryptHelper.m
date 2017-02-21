@@ -304,4 +304,9 @@ int main( int argc, char *argv[] )
     return nil;
 }
 #pragma mark -
++ (NSData *) sha256: (NSData *)data {
+    NSMutableData *out = [NSMutableData dataWithLength:CC_SHA256_DIGEST_LENGTH];
+    if ( CC_SHA256(data.bytes, (CC_LONG)data.length, out.mutableBytes) ) return out;
+    return nil;
+}
 @end

@@ -22,4 +22,7 @@
 //AES
 + (NSData *) encryptUseAES:(NSData *)data key:(NSString *) key;
 + (NSData *) decryptUseAES:(NSData *)data key:(NSString *) key;
+
+// SHA256
++ (NSData *) sha256:(NSData *)data;
 @end
