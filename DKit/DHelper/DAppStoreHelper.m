@@ -17,4 +17,8 @@
     else
         [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@", appID]]];
 }
+
++ (void)openExternalURL:(NSString *)URLString{
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URLString]];
+}
 @end

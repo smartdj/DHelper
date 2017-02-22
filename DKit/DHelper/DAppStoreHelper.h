@@ -10,4 +10,6 @@
 
 @interface DAppStoreHelper : NSObject
 +(void)gotoAppStore:(NSString*)appID;
+
++ (void)openExternalURL:(NSString *)URLString;
 @end
