@@ -10,6 +10,6 @@
 
 @interface UILabel (Category)
 - (CGSize)stringRect:(NSAttributedString *)string maxSize:(CGSize)maxSize;
-
++ (CGSize)sizeLabelToFit:(NSAttributedString *)aString width:(CGFloat)width height:(CGFloat)height;
 - (void)setLineSpacing:(CGFloat)lineSpacing;
 @end
