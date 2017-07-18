@@ -151,6 +151,11 @@
     return NO;
 }
 
++(BOOL)moveFileFrom:(NSString *)originalPath to:(NSString *)destPath{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    return [fileManager moveItemAtPath:originalPath toPath:destPath error:nil];
+}
+
 +(BOOL)isFileExistInPath:(NSString*)path
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];

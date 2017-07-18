@@ -25,6 +25,7 @@
 +(BOOL)deleteFileInPath:(NSString*)path;
 +(BOOL)isFileExistInPath:(NSString*)path;
 +(BOOL)renameFile:(NSString*)oldFilePath to:(NSString*)newFilePath;
++(BOOL)moveFileFrom:(NSString *)originalPath to:(NSString *)destPath;
 
 +(NSString*) fullFilePathFromBundle:(NSString*) bundleFullName withFileName:(NSString*)fileName;
 
