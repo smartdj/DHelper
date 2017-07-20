@@ -174,7 +174,7 @@
     while ((path = [dirEnum nextObject]) != nil)
     {
         NSDictionary *pathObj = nil;
-        NSLog(@"%@",path);
+//        NSLog(@"%@",path);
         
         BOOL isDirectory;
         [fm fileExistsAtPath:path isDirectory:&isDirectory];
