@@ -15,7 +15,9 @@
     if(imgSrc){
         NSData *data = [[NSData alloc] initWithBase64EncodedString:imgSrc
                                                            options:NSDataBase64DecodingIgnoreUnknownCharacters];
-        return [UIImage imageWithData:data];
+        
+        UIImage *image = [UIImage imageWithData:data];
+        return image;
     }else{
         return nil;
     }

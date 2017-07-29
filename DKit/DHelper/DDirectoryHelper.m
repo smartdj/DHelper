@@ -116,9 +116,10 @@
     
     BOOL isDir = FALSE;
     if([fileManager fileExistsAtPath:path
-                         isDirectory:&isDir] && isDir)
-    {
-        return [fileManager removeItemAtPath:path error:nil];
+                         isDirectory:&isDir]){
+        if(isDir){
+            return [fileManager removeItemAtPath:path error:nil];
+        }
     }
     return YES;
 }
