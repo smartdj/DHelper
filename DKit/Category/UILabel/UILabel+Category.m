@@ -104,4 +104,20 @@
     
     self.attributedText = attributedString;
 }
+
+- (void)setText:(NSString *)text withFontSpacing:(CGFloat)fontSpacing withLineSpacing:(CGFloat)lineSpacing{
+    //设置字间距
+    NSDictionary *dic = @{NSKernAttributeName:@0.5f};
+    NSMutableAttributedString * attributedString = [[NSMutableAttributedString alloc] initWithString:text attributes:dic];
+    
+    //行间距
+    NSMutableParagraphStyle * paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphStyle setLineSpacing:2];
+    
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:paragraphStyle range:NSMakeRange(0, [text length])];
+    //设置字体大小
+    [attributedString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16] range:NSMakeRange(0, [text length])];
+    
+    self.attributedText = attributedString;
+}
 @end

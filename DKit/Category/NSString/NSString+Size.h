@@ -9,5 +9,5 @@
 #import <Foundation/Foundation.h>
 
 @interface NSString (Size)
-
+-(CGSize)calcSizeWithFontSize:(CGFloat)fontSize withFontSpacing:(CGFloat)fontSpacing withLineSpacing:(CGFloat)lineSpacing withMaxSize:(CGSize)maxSize;
 @end
