@@ -10,13 +10,13 @@
 #import "LGHelper.h"
 @implementation DAppStoreHelper
 //959447103
-//+(void)gotoAppStore:(NSString*)appID
-//{
-//    if(kDeviceIsPhone)
-//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@", appID]]];
-//    else
-//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@", appID]]];
-//}
++(void)gotoAppStore:(NSString*)appID
+{
+    if(kDeviceIsPhone)
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@", appID]]];
+    else
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=%@", appID]]];
+}
 
 + (void)openExternalURL:(NSString *)URLString{
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:URLString]];

@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface DAppStoreHelper : NSObject
-//+(void)gotoAppStore:(NSString*)appID;
++(void)gotoAppStore:(NSString*)appID;
 
 + (void)openExternalURL:(NSString *)URLString;
 @end
