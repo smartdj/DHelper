@@ -10,5 +10,6 @@
 
 @interface NSString (Regex)
 -(BOOL)isMatchWithRegex:(NSString*)regexStr;
--(NSString*) subStringWithRegex:(NSString*)regexStr;
+-(NSString*) subStringWithRegex:(NSString *)regexStr;
+-(NSArray<NSString *> *)regexCapture:(NSString *)pattern;
 @end
